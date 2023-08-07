@@ -1,15 +1,18 @@
-const download = document.querySelectorAll(".card-download");
-const downloadButton = document.querySelectorAll(".download");
+const container = document.querySelectorAll(".container");
 
-download.forEach((item) => {
-  item.addEventListener("click", () => {
-    item.style.color = "green";
+const searchValue = document.getElementById("search");
 
-  });
-});
+const title = document.querySelectorAll(".title");
 
-downloadButton.forEach((item) => {
-  item.addEventListener("click", () => {
-    item.textContent = "ჩამოტვირთულია";
-  });
+searchValue.addEventListener("input", (e) => {
+    let inputValue = e.target.value.toLowerCase();
+
+    title.forEach((item) => {
+        if (item.textContent.toLowerCase().includes(inputValue)) {
+            item.parentElement.style.display = "block";
+            item.parentElement.style.display = "flex";
+        } else {
+            item.parentElement.style.display = "none";
+        }
+    });
 });

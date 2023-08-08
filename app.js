@@ -9,7 +9,6 @@ searchValue.addEventListener("input", (e) => {
 
     title.forEach((item) => {
         if (item.textContent.toLowerCase().includes(inputValue)) {
-            item.parentElement.style.display = "block";
             item.parentElement.style.display = "flex";
         } else {
             item.parentElement.style.display = "none";
